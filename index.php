@@ -1,4 +1,9 @@
 <?php 
+
+spl_autoload_register(function ($class) {
+    include 'classes/' . $class . '.php';
+});
+
 function secondToDate($mounth, $day) {
     $currentDate = date('Y.m.d.H.i.s', time());
     $currentDateArray = explode('.', $currentDate);
@@ -35,17 +40,6 @@ $currentDay = $currentDateArray[1];
 
 
 include 'classes/PDOconnect.php';
-
-
-
-// $sql = "
-
-// ";
-
-// $res = $PDO->PDO->query($sql);
-// var_dump($res);
-
-// die();
 
 $currentMonth = 12;
 $currentDay = 24;
